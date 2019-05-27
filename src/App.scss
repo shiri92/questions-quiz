@@ -1,6 +1,6 @@
 .game-board {
   .question {
-    background-color: #93859c;
+    background-color: #9677be;
     padding: 40px;
     border: 1px solid black;
     border-radius: 10px;
@@ -16,23 +16,23 @@
       cursor: pointer;
       transition: 0.3s;
       &:hover {
-        background-color: rgb(152, 112, 170);
+        background-color: #9677be;
       }
     }
   }
   .score {
-    background-color: #93859c;
+    background-color: #9677be;
   }
 }
 
 .clicked {
-  background-color: rgb(109, 221, 174) !important;
+  background-color: rgb(210, 212, 93) !important;
   box-shadow: inset 0px 0px 17px black;
 }
 
 .btn-primary {
-  background-color: rgb(160, 92, 238) !important;
-  border: 1px solid rgb(160, 92, 238) !important;
+  background-color: #611bbd !important;
+  border: 1px solid #130269 !important;
   min-width: 100px;
 }
 

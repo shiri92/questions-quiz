@@ -12,7 +12,7 @@ class GameBoard extends Component {
     }
 
 
-    async componentDidMount() {
+    componentDidMount() {
         this.props.getQuests();
         this.props.getCurrQuestion();
     }
@@ -79,6 +79,13 @@ class GameBoard extends Component {
     }
 
 
+    handleRestart = () => {
+        this.setState({playerScore: 0, answeredQuestions: [], isLastQuestion: false, selectedAnswer: null});
+        this.props.getQuests();
+        this.props.getCurrQuestion();
+    }
+
+
     render() {
         let { currQuestion } = this.props;
         if (currQuestion) {
@@ -118,6 +125,7 @@ class GameBoard extends Component {
                         <h1>Your Score:</h1>
                         <h1>{this.state.playerScore}</h1>
                     </div>
+                    <button className="btn btn-primary m-5" onClick={this.handleRestart}>Play Again</button>
                 </div>}
             </div>
         );
