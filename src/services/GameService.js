@@ -1,7 +1,7 @@
-// questions array
 
 let id = 1;
 
+// questions array
 const questions = [
     {
         id: id++, txt: 'Inside which HTML element do we put the JavaScript?',
@@ -118,19 +118,33 @@ const questions = [
 
 
 // get the questions
-
 function getQuests() {
+    questions.forEach(question => {
+        question.answers.forEach(answer => {
+            answer.isClicked = false;
+        });
+        question.selectedAnswer = null;
+    });
     return Promise.resolve(questions);
 }
 
 
 // get single question
-
 function getCurrQuestion(idx = 0) {
     return Promise.resolve(questions[idx]);
 }
 
+
+// update question
+function updateQuestion(answer) {
+    let question = questions.find(question => question.id === answer.id);
+    question.selectedAnswer = answer;
+    return Promise.resolve(question);
+}
+
+
 export default {
     getQuests,
-    getCurrQuestion
+    getCurrQuestion,
+    updateQuestion
 }
