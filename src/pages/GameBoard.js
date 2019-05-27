@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {getQuests, getCurrQuestion} from '../actions/gameActions';
 
-// import GameService from '../services/GameService';
 
 class GameBoard extends Component {
     state = {
@@ -28,8 +27,7 @@ class GameBoard extends Component {
             if(this.state.selectedAnswer.txt === answer.txt) return;
             let { selectedAnswer } = this.state;
             selectedAnswer.isClicked = false
-            // } else {
-                // this.setState({ selectedAnswer: answer });
+            this.props.currQuestion.selectedAnswer = answer;
             }
         this.setState({ selectedAnswer: answer });
     }
@@ -64,14 +62,14 @@ class GameBoard extends Component {
 
             // pass to the next question or the score screen
             this.props.getCurrQuestion(this.state.answeredQuestions.length);
-            // this.setState({ currQuestion: GameService.getCurrQuestion(this.state.answeredQuestions.length) })
         }
     }
 
 
     handlePreviewClick = () => {
-        console.log(this.state.selectedAnswer)
         // cut the answer from the answered questions array to let the player choose again
+        this.setState({selectedAnswer: this.props.currQuestion.selectedAnswer});
+        console.log(this.state.selectedAnswer)
         let { answeredQuestions } = this.state;
         answeredQuestions.pop();
         this.setState({
