@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/questions-quiz/static/css/main.989e38df.chunk.css",
-    "main.js": "/questions-quiz/static/js/main.fc57ba34.chunk.js",
-    "main.js.map": "/questions-quiz/static/js/main.fc57ba34.chunk.js.map",
+    "main.css": "/questions-quiz/static/css/main.22e5fc61.chunk.css",
+    "main.js": "/questions-quiz/static/js/main.c7a270b5.chunk.js",
+    "main.js.map": "/questions-quiz/static/js/main.c7a270b5.chunk.js.map",
     "runtime~main.js": "/questions-quiz/static/js/runtime~main.28b35228.js",
     "runtime~main.js.map": "/questions-quiz/static/js/runtime~main.28b35228.js.map",
     "static/css/2.dd6dd7bf.chunk.css": "/questions-quiz/static/css/2.dd6dd7bf.chunk.css",
-    "static/js/2.413bd870.chunk.js": "/questions-quiz/static/js/2.413bd870.chunk.js",
-    "static/js/2.413bd870.chunk.js.map": "/questions-quiz/static/js/2.413bd870.chunk.js.map",
+    "static/js/2.81afabc5.chunk.js": "/questions-quiz/static/js/2.81afabc5.chunk.js",
+    "static/js/2.81afabc5.chunk.js.map": "/questions-quiz/static/js/2.81afabc5.chunk.js.map",
     "index.html": "/questions-quiz/index.html",
-    "precache-manifest.ff1c48905db4df8fc7d4d0fe18e10c91.js": "/questions-quiz/precache-manifest.ff1c48905db4df8fc7d4d0fe18e10c91.js",
+    "precache-manifest.7eb4a1086bcec8fb2711e36ffbfc3586.js": "/questions-quiz/precache-manifest.7eb4a1086bcec8fb2711e36ffbfc3586.js",
     "service-worker.js": "/questions-quiz/service-worker.js",
     "static/css/2.dd6dd7bf.chunk.css.map": "/questions-quiz/static/css/2.dd6dd7bf.chunk.css.map",
-    "static/css/main.989e38df.chunk.css.map": "/questions-quiz/static/css/main.989e38df.chunk.css.map",
-    "static/media/index.scss": "/questions-quiz/static/media/background.e124da58.jpg"
+    "static/css/main.22e5fc61.chunk.css.map": "/questions-quiz/static/css/main.22e5fc61.chunk.css.map",
+    "static/media/index.scss": "/questions-quiz/static/media/ConcertOne-Regular.b39afe4a.ttf"
   }
 }
