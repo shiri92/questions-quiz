@@ -1,0 +1,43 @@
+.game-board {
+  .question {
+    background-color: #93859c;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+  .answers {
+    .answer {
+      background-color: rgb(240, 228, 245);
+      flex-basis: calc(50% - 40px);
+      margin: 10px;
+      border-radius: 10px;
+      border: 1px solid black;
+      padding: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        background-color: rgb(152, 112, 170);
+      }
+    }
+  }
+  .score {
+    background-color: #93859c;
+  }
+}
+
+.clicked {
+  background-color: rgb(109, 221, 174) !important;
+  box-shadow: inset 0px 0px 17px black;
+}
+
+.btn-primary {
+  background-color: rgb(160, 92, 238) !important;
+  border: 1px solid rgb(160, 92, 238) !important;
+  min-width: 100px;
+}
+
+@media (max-width: 700px) {
+  .answers {
+    display: block !important;
+  }
+}

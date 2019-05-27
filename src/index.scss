@@ -1,0 +1,25 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "./App.scss";
+
+@font-face {
+  font-family: concert-one-reg;
+  src: url("./assets/fonts/ConcertOne-Regular.ttf");
+}
+
+body {
+  box-sizing: border-box;
+  background-image: url("./assets/img/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  font-family: concert-one-reg;
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 0.7rem;
+  }
+}
