@@ -122,7 +122,7 @@ class GameBoard extends Component {
         return (
             <div className="game-board container text-center p-4">
                 {currQuestion && <div>
-                    <h1>Please answer the correct answer:</h1>
+                    <h1>Please choose the correct answer:</h1>
                     <div className="content">
                         <div className="question">
                             <h1>{currQuestion.txt}</h1>
