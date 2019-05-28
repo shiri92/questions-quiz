@@ -69,8 +69,10 @@ class GameBoard extends Component {
             } else {
                 // if doesn't exist selected answer we set it to the current question,
                 // if it's null or if it's been chosen before
-                let {selectedAnswer} = this.state.currQuestion;
-                this.setState({selectedAnswer});
+                if(this.state.currQuestion){
+                    let {selectedAnswer} = this.state.currQuestion;
+                    this.setState({selectedAnswer});
+                }
             }
         }
     }

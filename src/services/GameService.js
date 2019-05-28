@@ -17,10 +17,10 @@ const questions = [
     {
         id: id++, txt: 'How do you write a conditional statement for executing some statements only if "i" is equal to 5?',
         answers: [
-            { txt: 'If i==5 then', isClicked: false },
-            { txt: 'If i=5 then', isClicked: false },
-            { txt: 'If (i==5)', isClicked: false },
-            { txt: 'If i=5', isClicked: false }
+            { txt: 'if i==5 then', isClicked: false },
+            { txt: 'if i=5 then', isClicked: false },
+            { txt: 'if (i==5)', isClicked: false },
+            { txt: 'if i=5', isClicked: false }
         ],
         correctOptIndex: 2,
         selectedAnswer: null
@@ -28,9 +28,9 @@ const questions = [
     {
         id: id++, txt: 'How does a "for" loop start?',
         answers: [
-            { txt: 'For (let i = 0; i', isClicked: false },
-            { txt: 'For (i = 0; !', isClicked: false },
-            { txt: 'For i = 1 to 5', isClicked: false },
+            { txt: 'for (let i = 0; i', isClicked: false },
+            { txt: 'for (i = 0; !', isClicked: false },
+            { txt: 'for i = 1 to 5', isClicked: false },
             { txt: 'while (i', isClicked: false }
         ],
         correctOptIndex: 0,
@@ -39,10 +39,10 @@ const questions = [
     {
         id: id++, txt: 'You define an array using',
         answers: [
-            { txt: 'Var myarray = new Array();', isClicked: false },
-            { txt: 'Var myarray = array new;', isClicked: false },
-            { txt: 'Var new Array() = myarray;', isClicked: false },
-            { txt: 'Var new array = myarray;', isClicked: false }
+            { txt: 'var myarray = new Array();', isClicked: false },
+            { txt: 'var myarray = array new;', isClicked: false },
+            { txt: 'var new Array() = myarray;', isClicked: false },
+            { txt: 'var new array = myarray;', isClicked: false }
         ],
         correctOptIndex: 0,
         selectedAnswer: null
@@ -105,10 +105,10 @@ const questions = [
     {
         id: id++, txt: 'How do you create a function named coolFunction?',
         answers: [
-            { txt: 'Function => coolfunction () {}', isClicked: false },
-            { txt: 'Function=coolFunction();', isClicked: false },
-            { txt: 'Function:coolFunction(){}', isClicked: false },
-            { txt: 'Function coolFunction () {}', isClicked: false }
+            { txt: 'function => coolfunction () {}', isClicked: false },
+            { txt: 'function=coolFunction();', isClicked: false },
+            { txt: 'function:coolFunction(){}', isClicked: false },
+            { txt: 'function coolFunction () {}', isClicked: false }
         ],
         correctOptIndex: 3,
         selectedAnswer: null
