@@ -16,7 +16,7 @@
       cursor: pointer;
       transition: 0.3s;
       &:hover {
-        background-color: #9677be;
+        background-color: rgb(212, 184, 93);
       }
     }
   }
@@ -26,7 +26,7 @@
 }
 
 .clicked {
-  background-color: rgb(210, 212, 93) !important;
+  background-color: rgb(212, 184, 93) !important;
   box-shadow: inset 0px 0px 17px black;
 }
 
