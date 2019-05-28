@@ -22,7 +22,7 @@ class GameBoard extends Component {
 
 
     handleAnswerClick = answer => {
-        // making an answer object by the answer that the user clicked and updating it in the state
+        // update the answer object and set it to the state
         answer.id = this.state.currQuestion.id;
         answer.isClicked = true;
         this.props.updateQuestion(answer);
@@ -37,9 +37,6 @@ class GameBoard extends Component {
 
 
     handleNextClick = async () => {
-        let {selectedAnswer} = this.state.currQuestion;
-        this.setState({selectedAnswer });
-
         // checking by id if exist in the answered questions array and change it, or if not, push it
         if (this.state.selectedAnswer) {
             let { currQuestion } = this.state
@@ -49,7 +46,8 @@ class GameBoard extends Component {
             else answeredQuestions.push(currQuestion);
 
 
-            // changing back the answered questions array and the currAnswer in the state with the updated ones
+            // changing back the answered questions array,
+            // and the currAnswer in the state with the updated ones
             this.setState({ answeredQuestions, selectedAnswer: null });
 
 
@@ -68,14 +66,19 @@ class GameBoard extends Component {
             // checking if this is the last question, or the game still on after it
             if ((this.state.answeredQuestions.length + 1) === this.state.questions.length) {
                 this.setState({ isLastQuestion: true })
+            } else {
+                // if doesn't exist selected answer we set it to the current question,
+                // if it's null or if it's been chosen before
+                let {selectedAnswer} = this.state.currQuestion;
+                this.setState({selectedAnswer});
             }
         }
     }
 
 
     handlePreviewClick = async () => {
-        // getting back the preview curr question going down in array idx, and set again the
-        // selected answer by the one that wes before
+        // getting back the preview curr question going down in array idx,
+        // and set again the selected answer by the one that wes before
         await this.props.getCurrQuestion(this.state.answeredQuestions.length -1);
         let {selectedAnswer} = this.state.answeredQuestions[this.state.answeredQuestions.length - 1];
         let {answeredQuestions} = this.state;
@@ -105,9 +108,6 @@ class GameBoard extends Component {
 
 
     render() {
-        console.log(this.state.selectedAnswer)
-        console.log(this.state.answeredQuestions)
-
         let { currQuestion } = this.state;
         if (currQuestion) {
             var currAnswers = currQuestion.answers.map((answer, idx) => (
