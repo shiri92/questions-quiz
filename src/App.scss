@@ -1,13 +1,16 @@
 .game-board {
+  border-style: double;
+  background-color: #bee5fa;
   .question {
-    background-color: #9677be;
-    padding: 40px;
+    background-color: #071483;
+    color: white;
+    padding: 20px;
     border: 1px solid black;
     border-radius: 10px;
   }
   .answers {
     .answer {
-      background-color: rgb(240, 228, 245);
+      background-color: #dff2fe;
       flex-basis: calc(50% - 40px);
       margin: 10px;
       border-radius: 10px;
@@ -19,9 +22,6 @@
         background-color: rgb(212, 184, 93);
       }
     }
-  }
-  .score {
-    background-color: #9677be;
   }
 }
 

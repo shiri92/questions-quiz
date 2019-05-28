@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {connect} from "react-redux";
-import {getQuests, getCurrQuestion, updateQuestion} from '../actions/gameActions';
+import { connect } from "react-redux";
+import { getQuests, getCurrQuestion, updateQuestion } from '../actions/gameActions';
 
 
 class GameBoard extends Component {
@@ -17,7 +17,7 @@ class GameBoard extends Component {
     async componentDidMount() {
         await this.props.getQuests();
         await this.props.getCurrQuestion();
-        this.setState({questions: this.props.questions, currQuestion: this.props.currQuestion});
+        this.setState({ questions: this.props.questions, currQuestion: this.props.currQuestion });
     }
 
 
@@ -29,7 +29,7 @@ class GameBoard extends Component {
         this.setState({ selectedAnswer: answer });
         if (this.state.selectedAnswer) {
             // checking if it's the same answer, not doing anything
-            if(this.state.selectedAnswer.txt === answer.txt) return;
+            if (this.state.selectedAnswer.txt === answer.txt) return;
             let { selectedAnswer } = this.state;
             selectedAnswer.isClicked = false;
         }
@@ -60,18 +60,18 @@ class GameBoard extends Component {
 
             // pass to the next question or the score page
             await this.props.getCurrQuestion(this.state.answeredQuestions.length);
-            this.setState({ currQuestion: this.props.currQuestion }); 
-            
-            
+            this.setState({ currQuestion: this.props.currQuestion });
+
+
             // checking if this is the last question, or the game still on after it
             if ((this.state.answeredQuestions.length + 1) === this.state.questions.length) {
                 this.setState({ isLastQuestion: true })
             } else {
                 // if doesn't exist selected answer we set it to the current question,
                 // if it's null or if it's been chosen before
-                if(this.state.currQuestion){
-                    let {selectedAnswer} = this.state.currQuestion;
-                    this.setState({selectedAnswer});
+                if (this.state.currQuestion) {
+                    let { selectedAnswer } = this.state.currQuestion;
+                    this.setState({ selectedAnswer });
                 }
             }
         }
@@ -81,16 +81,16 @@ class GameBoard extends Component {
     handlePreviewClick = async () => {
         // getting back the preview curr question going down in array idx,
         // and set again the selected answer by the one that wes before
-        await this.props.getCurrQuestion(this.state.answeredQuestions.length -1);
-        let {selectedAnswer} = this.state.answeredQuestions[this.state.answeredQuestions.length - 1];
-        let {answeredQuestions} = this.state;
+        await this.props.getCurrQuestion(this.state.answeredQuestions.length - 1);
+        let { selectedAnswer } = this.state.answeredQuestions[this.state.answeredQuestions.length - 1];
+        let { answeredQuestions } = this.state;
         answeredQuestions.pop();
         this.setState({
             currQuestion: this.props.currQuestion,
             selectedAnswer,
-            playerScore: this.state.playerScore -10,
+            playerScore: this.state.playerScore - 10,
             answeredQuestions
-         })
+        })
     }
 
 
@@ -105,7 +105,7 @@ class GameBoard extends Component {
         });
         await this.props.getQuests();
         await this.props.getCurrQuestion();
-        this.setState({questions: this.props.questions, currQuestion: this.props.currQuestion});
+        this.setState({ questions: this.props.questions, currQuestion: this.props.currQuestion });
     }
 
 
@@ -120,25 +120,28 @@ class GameBoard extends Component {
             ))
         }
         return (
-            <div className="game-board p-5">
-                {currQuestion && <div className="container content">
-                    <div className="question">
-                        <h1 className="text-center">{currQuestion.txt}</h1>
-                    </div>
-                    <div className="answers d-flex flex-wrap justify-content-center">
-                        {currAnswers}
-                    </div >
+            <div className="game-board container text-center p-4">
+                {currQuestion && <div>
+                    <h1>Please answer the correct answer:</h1>
+                    <div className="content">
+                        <div className="question">
+                            <h1>{currQuestion.txt}</h1>
+                        </div>
+                        <div className="answers d-flex flex-wrap justify-content-center">
+                            {currAnswers}
+                        </div >
 
-                    <div className="btns d-flex justify-content-center">
-                        <button className="prev btn btn-primary m-5"
-                            disabled={!this.state.answeredQuestions.length}
-                            onClick={this.handlePreviewClick}>
-                            Preview
-                        </button>
-                        <button className="next btn btn-primary m-5"
-                            onClick={this.handleNextClick}>
-                            {this.state.isLastQuestion ? 'Done' : 'Next'}
-                        </button>
+                        <div className="btns d-flex justify-content-center">
+                            <button className="prev btn btn-lg btn-primary m-5"
+                                disabled={!this.state.answeredQuestions.length}
+                                onClick={this.handlePreviewClick}>
+                                Preview
+                            </button>
+                            <button className="next btn btn-lg btn-primary m-5"
+                                onClick={this.handleNextClick}>
+                                {this.state.isLastQuestion ? 'Done' : 'Next'}
+                            </button>
+                        </div>
                     </div>
                 </div>}
 
@@ -148,7 +151,7 @@ class GameBoard extends Component {
                         <h1>Your Score:</h1>
                         <h1>{this.state.playerScore}</h1>
                     </div>
-                    <button className="btn btn-primary m-5" onClick={this.handleRestart}>Play Again</button>
+                    <button className="btn btn-lg btn-primary m-5" onClick={this.handleRestart}>Play Again</button>
                 </div>}
             </div>
         );
@@ -156,11 +159,11 @@ class GameBoard extends Component {
 }
 
 
-const mapGameToProps =  state => ({
+const mapGameToProps = state => ({
     questions: state.gameReducer.items,
     currQuestion: state.gameReducer.item
 })
 
 
-export default connect(mapGameToProps, {getQuests, getCurrQuestion, updateQuestion })(GameBoard);
+export default connect(mapGameToProps, { getQuests, getCurrQuestion, updateQuestion })(GameBoard);
 

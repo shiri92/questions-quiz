@@ -7,13 +7,19 @@
   src: url("./assets/fonts/ConcertOne-Regular.ttf");
 }
 
+html {
+  font-size: 0.8rem;
+}
+
 body {
   box-sizing: border-box;
   font-family: concert-one-reg;
+  background-color: #82cbf9;
+  padding-top: 50px;
 }
 
 @media (max-width: 500px) {
-  html {
-    font-size: 0.7rem;
+  body {
+    padding-top: 0;
   }
 }
